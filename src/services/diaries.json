@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "date": "2019-01-01",
+        "weather": "rainy",
+        "temperature": 10,
+        "visibility": "poor",
+        "wind": "strong"
+    },
+    {
+        "id": 2,
+        "date": "2019-01-02",
+        "weather": "sunny",
+        "temperature": 20,
+        "visibility": "good",
+        "wind": "light"
+    },
+    {
+        "id": 3,
+        "date": "2019-01-03",
+        "weather": "cloudy",
+        "temperature": 15,
+        "visibility": "fair",
+        "wind": "moderate"
+    },
+    {
+        "id": 4,
+        "date": "2019-01-04",
+        "weather": "snowy",
+        "temperature": -5,
+        "visibility": "poor",
+        "wind": "strong"
+    },
+    {
+        "id": 5,
+        "date": "2019-01-05",
+        "weather": "sunny",
+        "temperature": 25,
+        "visibility": "excellent",
+        "wind": "light"
+    }
+]
+
