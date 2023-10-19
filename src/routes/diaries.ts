@@ -1,13 +1,17 @@
 import express from 'express';
 
+import * as diaryServices from '../services/diaryServices';
+
 const router = express.Router();
 
 router.get('/', (_req, res) => {
-    res.send('TODO');
+    const diaries = diaryServices.getNonSensitiveDiaries();
+    res.send(diaries);
 });
 
 router.post('/', (_req, res) => {
-    res.send('TODO');
+    const newDiaryEntry = diaryServices.addDiary();
+    res.json(newDiaryEntry);
 });
 
 export default router;
