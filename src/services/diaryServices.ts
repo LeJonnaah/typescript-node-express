@@ -1,12 +1,31 @@
-import diaryData from "./diaries.json";
-import { DiaryEntry } from "../types";
+import diaryData from './diaries.json'
+import { DiaryEntry, Visibility, Weather, Wind } from '../types'
 
-const diaries: Array<DiaryEntry> = diaryData as Array<DiaryEntry>;
+const diaries: DiaryEntry[] = diaryData as DiaryEntry[]
 
-export const getEntries = (): Array<DiaryEntry> => {
-    return diaries;
-};
+export const getEntries = (): DiaryEntry[] => {
+  return diaries
+}
 
-export const addEntry = () => {
-    return null;
-};
+export const findById = (id: number): DiaryEntry | undefined => {
+  const entry = diaries.find(d => d.id === id)
+  if (entry !== undefined) {
+    const { wind, temperature, ...rest } = entry
+    return rest
+  }
+    return undefined
+}
+
+export const addEntry = (date: string, weather: Weather, visibility: Visibility, temperature: number, wind: Wind): DiaryEntry => {
+  const newDiaryEntry = {
+    id: Math.max(...diaries.map(d => d.id)) + 1,
+    date,
+    weather,
+    visibility,
+    temperature,
+    wind
+  }
+
+  diaries.push(newDiaryEntry)
+  return newDiaryEntry
+}
