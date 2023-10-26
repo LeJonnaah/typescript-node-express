@@ -10,10 +10,9 @@ export const getEntries = (): DiaryEntry[] => {
 export const findById = (id: number): DiaryEntry | undefined => {
   const entry = diaries.find(d => d.id === id)
   if (entry !== undefined) {
-    const { wind, temperature, ...rest } = entry
-    return rest
+    return entry
   }
-    return undefined
+  return undefined
 }
 
 export const addEntry = (date: string, weather: Weather, visibility: Visibility, temperature: number, wind: Wind): DiaryEntry => {
